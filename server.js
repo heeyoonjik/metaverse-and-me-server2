@@ -4,29 +4,28 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const Data = require('./models/Data');
+const port = process.env.MONGODB_URL || 8000; 
 require('dotenv').config({path: "variables.env"});
 
 
-// app.listen( 8000,(err)=>{
-//         if(err){
-//             return console.log(err);
-//         }else{
+
+
+app.listen( port,(err)=>{
+        if(err){
+            return console.log(err);
+        }else{
             mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser : true}, (err)=> {
                 if(err) {
                     console.timeLog(err)
                 } else{
                     console.log('Connected to database successfully');
                 }
-        //     });
-        // }    
+            });
+        }    
     });
-
-
 
 app.use(bodyParser.json());
 app.use(cors());
-
-
 
 app.post('/data', (req,res)=> {
   const newData = new Data();
