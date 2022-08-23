@@ -4,6 +4,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const Data = require('./models/Data');
+const MONGODB_URL ='MONGODB_URL =mongodb+srv://heeyoon1302:Fuckpenisex3258!@metaverse-and-me.sjoicej.mongodb.net/?retryWrites=true&w=majority'
+
 require('dotenv').config({path: "variables.env"});
 
 
