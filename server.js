@@ -7,18 +7,18 @@ const Data = require('./models/Data');
 require('dotenv').config({path: "variables.env"});
 
 
-app.listen( 8000,(err)=>{
-        if(err){
-            return console.log(err);
-        }else{
+// app.listen( 8000,(err)=>{
+//         if(err){
+//             return console.log(err);
+//         }else{
             mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser : true}, (err)=> {
                 if(err) {
                     console.timeLog(err)
                 } else{
                     console.log('Connected to database successfully');
                 }
-            });
-        }    
+        //     });
+        // }    
     });
 
 
