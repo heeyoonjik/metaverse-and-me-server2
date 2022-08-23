@@ -1,27 +1,26 @@
-const express = require('express');
-const mongoose = require('mongoose');
+// const express = require('express');
+import express from 'express';
+import mongoose from 'mongoose';
+// const mongoose = require('mongoose');
 const app = express();
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const Data = require('./models/Data');
-const MONGODB_URL ='MONGODB_URL =mongodb+srv://heeyoon1302:Fuckpenisex3258!@metaverse-and-me.sjoicej.mongodb.net/?retryWrites=true&w=majority'
+import bodyParser from 'body-parser';
+// const bodyParser = require('body-parser');
+import cors from 'cors';
+// const cors = require('cors');
+// const Data = require('./models/Data');
+const MONGODB_URL ='mongodb+srv://heeyoon1302:Fuckpenisex3258!@metaverse-and-me.sjoicej.mongodb.net/?retryWrites=true&w=majority'
 
-require('dotenv').config({path: "variables.env"});
+// require('dotenv').config({path: "variables.env"});
 
-
-app.listen( 8000,(err)=>{
-        if(err){
-            return console.log(err);
-        }else{
-            mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser : true}, (err)=> {
+mongoose.connect(MONGODB_URL, {useNewUrlParser : true}, (err)=> {
                 if(err) {
                     console.timeLog(err)
                 } else{
                     console.log('Connected to database successfully');
                 }
             });
-        }    
-    });
+        
+  
 
 
 
