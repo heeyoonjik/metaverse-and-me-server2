@@ -49,3 +49,7 @@ app.get("/data", async (req, res) => {
 
   
 
+// app.get("/data", async (req, res) => {
+//   const data = await Data.find();
+//    res.json(data);
+// });
